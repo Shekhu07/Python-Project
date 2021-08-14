@@ -8,7 +8,7 @@ import schedule
 import smtplib
 
 # Email id for who want to check availability
-receiver_email_id = "EMAIL_ID_OF_USER"
+receiver_email_id = "shekhucr729@gmail.com"
 
 
 def check(url):
@@ -36,12 +36,12 @@ def check(url):
 
 
 def sendemail(ans, product):
-    GMAIL_USERNAME = "YOUR_GMAIL_ID"
-    GMAIL_PASSWORD = "YOUR_GMAIL_PASSWORD"
+    GMAIL_USERNAME = "abhisheks958999@gmail.com"
+    GMAIL_PASSWORD = "@Bhishek958999"
 
     recipient = receiver_email_id
     body_of_email = ans
-    email_subject = product + ' product availability'
+    email_subject = product + 'product availability'
 
     # creates SMTP session
     s = smtplib.SMTP('smtp.gmail.com', 587)
@@ -50,24 +50,24 @@ def sendemail(ans, product):
     s.starttls()
 
     # Authentication
-    s.login(GMAIL_USERNAME, GMAIL_PASSWORD)
+    s.login(abhisheks958999@gmail.com, '@Bhishek958999')
 
     # message to be sent
-    headers = "\r\n".join(["from: " + GMAIL_USERNAME,
+    headers = "\r\n".join(["from: " + abhisheks958999@gmail.com,
                            "subject: " + email_subject,
                            "to: " + recipient,
                            "mime-version: 1.0",
                            "content-type: text/html"])
 
     content = headers + "\r\n\r\n" + body_of_email
-    s.sendmail(GMAIL_USERNAME, recipient, content)
+    s.sendmail(abhisheks958999@gmail.com, recipient, content)
     s.quit()
 
 
 def ReadAsin():
     # Asin Id is the product Id which
     # needs to be provided by the user
-    Asin = 'B082VS5H3Y'
+    Asin = 'B092ZJVB6Z'
     url = "http://www.amazon.in/dp/" + Asin
     print("Processing: "+url)
     ans = check(url)
